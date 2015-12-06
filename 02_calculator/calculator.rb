@@ -13,5 +13,3 @@ def sum(arr)
     arr.inject{|x, sum| x + sum}
   end
 end
-
-
