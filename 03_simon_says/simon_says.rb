@@ -2,10 +2,7 @@ def echo(str)
   str
 end
 
-<<<<<<< HEAD
-=======
 def shout(str)
->>>>>>> origin/dev
   str.upcase
 end
 
