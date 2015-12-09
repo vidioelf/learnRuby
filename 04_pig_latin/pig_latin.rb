@@ -1,14 +1,26 @@
 def translate(str)
-  if (str[0] == "a") ||
-     (str[0] == "e") ||
-     (str[0] == "i") ||
-     (str[0] == "y") ||
-     (str[0] == "u") ||
-     (str[0] == "o"); str + "ay"
-  elsif (str[0] == "b") ||
-        (str[0] == "n")
-     get_FL = str[0]
-     del_FL = str.delete str[0];
-     del_FL + get_FL + "ay"
+   arr_end = []
+   arr =  str.split
+   arr.each do |x|  x.to_s
+
+
+   if x.chr == "a" ||
+       x.chr == "e" ||
+       x.chr == "u"
+       arr_end << x + "ay"
+    elsif x.chr == "n" ||
+          x.chr == "p" ||
+          x.chr == "s" ||
+          x.chr == "t"
+
+      get_w_end = x.delete x.chr
+      arr_end << get_w_end + x.chr + "ay"
+
+    end
+
   end
+  arr_end.join(" ")
 end
+
+ p translate("stupid")
+
