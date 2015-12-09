@@ -2,6 +2,10 @@ def echo(str)
   str
 end
 
+<<<<<<< HEAD
+=======
+def shout(str)
+>>>>>>> 77919e06b61fe8e8c727451e7532bd14fb4e6f7f
   str.upcase
 end
 
