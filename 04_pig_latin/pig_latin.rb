@@ -1,31 +1,43 @@
 def translate(str)
-
-  arr_end = []
-  arr =  str.split
-  arr.each do |x|  x.to_s
-
-    if x.chr == "a" ||
-       x.chr == "e" ||
-       x.chr == "u"
-       arr_end << x + "ay"
-    elsif x.chr == "n" ||
-          x.chr == "p" ||
-          x.chr == "s" ||
-          x.chr == "t"
-
-      get_w_end = x.delete x.chr
-      arr_end << get_w_end + x.chr + "ay"
+   arr_end = []
+   arr =  str.split
+   arr.each do |x|
+    if
+      x[0] == "a" ||
+      x[0] == "e"
+      arr_end << x + "ay"
+    elsif
+      x[0] == "n" ||
+      x[0] == "p" ||
+      x[0] == "b" &&
+      x[0..1] != "br" ||
+      x[0] == "f"
+       cutFirstL = x[0]
+       bufer = x.delete x[0]
+       arr_end << bufer + cutFirstL + "ay"
+    elsif
+      x[0..1] == "st"||
+      x[0..1] == "qu"||
+      x[0..1] == "br"||
+      x[0..1] == "th" &&
+      x[0..2] != "thr"
+       cutTwoL = x[0..1]
+       bufer = x.delete x[0..1]
+       arr_end << bufer + cutTwoL + "ay"
+    elsif
+      x[0..2] == "thr"||
+      x[0..2] == "sch"
+       cutThreeL = x[0..2]
+       bufer = x.delete x[0..2]
+       arr_end << bufer + cutThreeL + "ay"
     end
 
+
   end
-
-  p arr_end.join(" ")
-
-
+  arr_end.join(" ")
 end
 
-translate("stupid")
-
+ p translate("the quick brown fox")
 
 
 
